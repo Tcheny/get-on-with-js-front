@@ -6,11 +6,16 @@ class Playground extends Component {
   state = {
     bluemargin : 0,
   }
-
   componentDidMount() {
     let bleu = ReactDOM.findDOMNode(this.refs.bleu);
-    let tween = TweenLite.to(bleu, 2, {width: "100px", height:"100px"})
-    bleu.addEventListener('click', () => tween.reverse(1));
+    let tween = TweenLite.from(bleu, 2, {marginLeft: "-300%"})
+    tween.pause();
+    let animation = (e) => {
+      if (document.documentElement.scrollTop > bleu.offsetTop - (document.documentElement.clientHeight / 3 * 2)) {
+        tween.play()
+      }
+    }
+    window.addEventListener('scroll', () => animation());
   }
   render() {
     return (
