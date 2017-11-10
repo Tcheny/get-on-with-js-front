@@ -1,12 +1,11 @@
 @import "./variables.scss";
 @import "./mixins.scss";
-
 @import "./main.scss";
-
 @import "./layouts/Playground.scss";
 @import "./layouts/App.scss";
 @import "./layouts/Homepage.scss";
-
+@import "./layouts/Terminal";
+@import "./layouts/HtmlCss";
 // Google Font
 // Faster One
 @import url('https://fonts.googleapis.com/css?family=Faster+One');
